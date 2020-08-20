@@ -1,28 +1,22 @@
 import React, { Fragment } from 'react';
 import {BrowserRouter, Route, Link, Switch} from 'react-router-dom';
-// import UserDetail from './pages/UserDetail';
-// import UserNew from './pages/UserNew';
+import UserAll from './UserAll';
+import UserNew from './UserNew';
+import UserDetail from './UserDetail';
 import axios from 'axios';
 
 function User() {
-
-    axios.get('http://localhost:4000/message', {
-        headers: {
-            'X-Requested-With': 'XMLHttpRequest'
-        }
-    })
-
     return(
         <Fragment>
             <Switch>
                 <Route exact path="/user">
-                    User    
+                    <UserAll />    
                 </Route>
                 <Route path="/user/new">
-                    {/* <UserNew /> */}
+                    <UserNew />
                 </Route>
                 <Route path="/user/:id">
-                    {/* <UserDetail /> */}
+                    <UserDetail />
                 </Route>
             </Switch>
         </Fragment>
